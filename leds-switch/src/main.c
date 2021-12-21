@@ -49,10 +49,10 @@ int main(void)
 
 	while(1)
 	{
+		P1OUT ^= BIT0 | BIT6;
+
 		/* Wait for LED_DELAY_CYCLES cycles */
 		__delay_cycles(LED_DELAY_CYCLES);
-
-		P1OUT ^= BIT0 | BIT6;
 	}
 	return 0;
 }
