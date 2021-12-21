@@ -14,6 +14,7 @@ macro(CREATE_FLASH_TARGET TARGET_NAME)
 endmacro()
 
 add_subdirectory(blink-leds)
+add_subdirectory(leds-switch)
 
 # MESSAGE("link directories: ${LINK_DIRECTORIES}")
 # MESSAGE("compile options: ${COMPILE_OPTIONS}")
