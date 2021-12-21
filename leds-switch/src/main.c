@@ -35,10 +35,23 @@ int main(void)
 	P1OUT &= ~BIT0;  // P1.0 off
 	P1OUT |= BIT6;  // P1.6 on
 
+	/* Configure P1.3 to digital input */
+	P1SEL &= ~BIT3;
+	P1SEL2 &= ~BIT3;
+	P1DIR &= ~BIT3;
+
+	/* Pull-up required for rev 1.5 Launchpad */
+	P1REN |= BIT3;
+	P1OUT |= BIT3;
+
+	/* Wait forever until the button is pressed */
+	while (P1IN & BIT3);
+
 	while(1)
 	{
 		/* Wait for LED_DELAY_CYCLES cycles */
 		__delay_cycles(LED_DELAY_CYCLES);
+
 		P1OUT ^= BIT0 | BIT6;
 	}
 	return 0;
