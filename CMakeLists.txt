@@ -26,12 +26,3 @@ endmacro()
 add_subdirectory(blink-leds)
 add_subdirectory(leds-switch)
 
-# MESSAGE("link directories: ${LINK_DIRECTORIES}")
-# MESSAGE("compile options: ${COMPILE_OPTIONS}")
-# 
-# get_target_property(MAIN_CFLAGS msp430 COMPILE_OPTIONS)
-# get_target_property(MAIN_LDIRS msp430 LINK_DIRECTORIES)
-# # also see: COMPILE_DEFINITIONS INCLUDE_DIRECTORIES
-# message("-- Target compiler flags are: ${MAIN_CFLAGS}")
-# message("-- Target link directories are: ${MAIN_LDIRS}")
-
