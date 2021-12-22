@@ -23,17 +23,22 @@ static int _verify_cal_data(void)
 
 int main(void)
 {
-	WDTCTL = WDTPW + WDTHOLD; // Stop WDT
+	WDTCTL = WDTPW + WDTHOLD; /* Stop WDT */
+
+	if (_verify_cal_data() != 0) {
+		/*  Calibration data is corrupted...hang */
+		while(1);
+	}
 
 	/* Configure the clock module - MCLK = 1MHz */
 	DCOCTL = 0;
 	BCSCTL1 = CALBC1_1MHZ;
 	DCOCTL = CALDCO_1MHZ;
 
-	P1DIR |= BIT0 | BIT6; // P1.0 output, P1.6 output
+	P1DIR |= BIT0 | BIT6; /* P1.0 output, P1.6 output */
 
-	P1OUT &= ~BIT0;  // P1.0 off
-	P1OUT |= BIT6;  // P1.6 on
+	P1OUT &= ~BIT0;  /* P1.0 off */
+	P1OUT |= BIT6;  /* P1.6 on */
 
 	/* Configure P1.3 to digital input */
 	P1SEL &= ~BIT3;
