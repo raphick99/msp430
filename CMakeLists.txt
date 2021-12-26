@@ -26,4 +26,5 @@ endmacro()
 add_subdirectory(blink-leds)
 add_subdirectory(leds-switch)
 add_subdirectory(interrupts)
+add_subdirectory(timers)
 
