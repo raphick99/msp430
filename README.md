@@ -1,6 +1,5 @@
 ## msp430-training
-## Based off of [this blog](http://www.simplyembedded.org/tutorials/) and [this
-repository](https://github.com/simplyembedded/msp430_launchpad)
+## Based off of [this blog](http://www.simplyembedded.org/tutorials/) and [this repository](https://github.com/simplyembedded/msp430_launchpad)
 #### Build target using:
 ```bash
 TARGET=blink-leds  # bash variable holding target name
