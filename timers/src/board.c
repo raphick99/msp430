@@ -65,11 +65,12 @@ int board_init(void)
     }
 
     /* Configure P1.0 as digital output */
-    P1SEL &= ~BIT1;
-    P1DIR |= BIT1;
+    //P1SEL &= ~(BIT1 | BIT6);
+    P1DIR |= BIT0 | BIT6;
 
     /* Set P1.0 output high */
-    P1OUT |= BIT1;
+    P1OUT &= ~BIT6;
+    P1OUT |= BIT0;
 
     /* Configure P1.3 to digital input */
     P1SEL &= ~BIT3;

@@ -78,8 +78,8 @@ static void blink_led(void *arg)
 {
     (void) arg;
 
-    /* Toggle P1.0 output */
-    P1OUT ^= BIT1;
+    /* Toggle P1.0, P1.6 output */
+    P1OUT ^= BIT0 | BIT6;
 }
 
 void port1_isr(void)
