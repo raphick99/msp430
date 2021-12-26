@@ -8,7 +8,6 @@ add_compile_options(
 	-Werror
 	-Wextra
 	-Wshadow
-	-Wpedantic
 )
 
 add_link_options(
@@ -27,4 +26,5 @@ add_subdirectory(blink-leds)
 add_subdirectory(leds-switch)
 add_subdirectory(interrupts)
 add_subdirectory(timers)
+add_subdirectory(uart)
 
